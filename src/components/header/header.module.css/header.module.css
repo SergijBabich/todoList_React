@@ -1,0 +1,41 @@
+.header {
+  height: 50px;
+  max-width: 1170px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 0px;
+  align-items: center;
+}
+.header_authorize {
+  margin-right: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.header_authorize p  {
+  color: #cecaca;
+}
+.header_authorize_button {
+  background-image: url(https://img.icons8.com/carbon-copy/100/000000/export.png);
+  width: 40px;
+  height: 30px;
+  background-size: cover;
+  background-position: center;
+}
+.header_authorize button {
+  width: 40px;
+  height: 30px;
+  background-color: #cecaca00;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.header_authorize span {
+color: #9d40e4;
+font-size: 30px;
+font-family: Brush Script MT;
+}
