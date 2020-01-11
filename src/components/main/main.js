@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Authorize from '../authorize/authorize.js';
 import Sidebar from '../sidebar/sidebar.js';
-import TodoListContainer from '../content/content_container.js';
 import { Redirect } from 'react-router-dom';
 import store from '../../REDUX/Redux_store.js';
 import Header from '../header/header.js';
@@ -22,7 +21,7 @@ import {BrowserRouter, Route, withRouter} from  'react-router-dom';
 
   renderRedirect = () => {
     if(this.state.redirect == true) {
-
+      console.log(this.props);
       return <Redirect to='/authorize' />
     }
   }

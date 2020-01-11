@@ -4,11 +4,13 @@ import { Field, reduxForm } from 'redux-form';
 import {connect} from   'react-redux';
 import { Redirect } from 'react-router-dom';
 import {setUserData} from   '../../REDUX/Auth_Reducer.js';
+import listReducer from '../../REDUX/List_Reducer';
+import {deleteTask} from '../../REDUX/List_Reducer';
 import {Input} from '../../Utils/formControl.js';
 import authReducer from   '../../REDUX/Auth_Reducer.js';
 import {required , maxLengthCreator, minLengthCreator} from '../../Utils/validator.js'
 const Authorize = (props) => {
-
+ console.log(props);
  let redirect = () => {
    if (props.login && props.password) {
       return <Redirect to='/content' />
@@ -56,10 +58,11 @@ const  AuthorizeReduxForm = reduxForm({form:'authorize'})(AuthorizeForm);
 const mapStateToProps = (state) =>  {
   return {
     login: state.auth.login,
-    password: state.auth.password
+    password: state.auth.password,
+    myPostData: state.post.myPostData
 
   }
-  }
+}
 const mapDispatchToProps = (dispatch) => {
   return {
     setUserData:(login, password) => {
@@ -67,5 +70,6 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Authorize);

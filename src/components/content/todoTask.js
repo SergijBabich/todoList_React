@@ -5,12 +5,12 @@ import {connect} from   'react-redux';
 import {setPostData} from '../../REDUX/List_Reducer';
 const TodoTask = (props) => {
 
- let removeObj = () => {
+/* let removeObj = () => {
    let a = false;
    props.hideBlock(a);
 
    console.log("hide");
-}
+}*/
  /*const handleClick = (index) => {
    let newTasks = props.myPostData.filter(elem => {
      return elem.id !== index
@@ -26,13 +26,13 @@ const TodoTask = (props) => {
       <div>{props.name}</div>
       <div>{props.description}</div>
       <div>
-       <button onClick={removeObj} name='Create task'  value={props.done} ></button>
+       <button name='Create task'  value={props.done} ></button>
       </div>
       </div>
       </div>
   )
 }
-let mapStateToProps = (state) => {
+/*let mapStateToProps = (state) => {
   return {
   id: state.post.myPostData.id
   }
@@ -44,6 +44,6 @@ const mapDispatchToProps = (dispatch) => {
     },
 
   }
-}
+}*/
 
-export default  connect(mapStateToProps, mapDispatchToProps)(TodoTask);
+export default TodoTask;

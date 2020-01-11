@@ -16,9 +16,8 @@ const listReducer = (state = initialState, action) => {
         myPostData: [...state.myPostData, newTask]
       }
     case DELETE_TASK:
-      console.log(action);
-      return {
-        done:action.newTasks
+          return {
+        myPostData:action.newTasks
       }
     default:
      return state;
@@ -35,7 +34,7 @@ export let setPostData = (name, description) => {
 export let deleteTask = (newTasks) => {
   return {
     type: DELETE_TASK,
-    newTasks:newTasks
+    newTasks
   }
 }
 

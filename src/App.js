@@ -8,19 +8,20 @@ import { Route, withRouter} from  'react-router-dom';
 import Authorize from './components/authorize/authorize.js';
 import Sidebar from './components/sidebar/sidebar.js';
 import TodoListContainer from './components/content/content_container.js';
+import HeaderContainer from './components/header/header_container.js';
 import { Redirect } from 'react-router-dom';
-import Header from './components/header/header.js';
 import Footer from './components/footer/footer.js';
 import main from './components/main/main/main.module.css';
 import Button from './components/main/main.js';
 function App() {
+
   return (
     <div className='app-wrapper'>
 
     <BrowserRouter>
       <Provider store = {store}>
-        <div className='wrapper__description'>
-{/*<Redirect from="/" to="/start" />*/}
+            <div className='wrapper__description'>
+<Redirect from="/" to="/start" />
           <Route path='/start'  render = { () => {
              return    <React.Suspense>
 
@@ -37,7 +38,7 @@ function App() {
                <Authorize /> </React.Suspense>   }} />
 
        <Route path='/content'  render = { () => {  return    <React.Suspense>
-               <Header />
+               <HeaderContainer />
                <TodoListContainer />
                <Sidebar />
                                {/*  <Footer />*/}
