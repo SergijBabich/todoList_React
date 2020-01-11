@@ -1,5 +1,6 @@
 const ADD_POST_DATA = 'ADD-POST-DATA';
-const DELETE_TASK = 'DELETE-TASK';
+const CLEAR_STORAGE = 'CLEAR-STORAGE';
+const DELETE_POST_DATA = 'DELETE-POST-DATA';
 /*{id: null, name: null, description: null, delete:false}*/
 let initialState = {
   myPostData: [{id:865, tweretrter:'sdasd', description:'df', done:true},]
@@ -15,9 +16,13 @@ const listReducer = (state = initialState, action) => {
       return {
         myPostData: [...state.myPostData, newTask]
       }
-    case DELETE_TASK:
+    case CLEAR_STORAGE:
           return {
         myPostData:action.newTasks
+      }
+    case DELETE_POST_DATA:
+      return {
+        myPostData:action.newTask
       }
     default:
      return state;
@@ -33,8 +38,14 @@ export let setPostData = (name, description) => {
 }
 export let deleteTask = (newTasks) => {
   return {
-    type: DELETE_TASK,
+    type: CLEAR_STORAGE,
     newTasks
+  }
+}
+export let deletePostData = (newTask) => {
+  return {
+    type: DELETE_POST_DATA,
+    newTask
   }
 }
 

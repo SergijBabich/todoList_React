@@ -1,24 +1,21 @@
 import React from 'react';
 import c from './content.module.css/content.module.css';
-import {deleteTask} from '../../REDUX/List_Reducer';
+import {deletePostData} from '../../REDUX/List_Reducer';
 import {connect} from   'react-redux';
 import {setPostData} from '../../REDUX/List_Reducer';
 const TodoTask = (props) => {
 
-/* let removeObj = () => {
+ /*let removeObj = () => {
+    console.log(props);
    let a = false;
-   props.hideBlock(a);
-
-   console.log("hide");
 }*/
- /*const handleClick = (index) => {
-   let newTasks = props.myPostData.filter(elem => {
-     return elem.id !== index
+ const handleClick = () => {
+   let newTask = props.myPostData.filter((elem, index) => {
+     return index !== props.id
    });
-   props.deleteTask(newTasks);
+   props.deletePostData(newTask);
   // props.history.push('/');
-   console.log(newTasks);
- }*/
+ }
   return (
       <div>
       <div className={ c.container__items}>
@@ -26,24 +23,24 @@ const TodoTask = (props) => {
       <div>{props.name}</div>
       <div>{props.description}</div>
       <div>
-       <button name='Create task'  value={props.done} ></button>
+       <button onClick={handleClick} name='Create task'  value={props.done} ></button>
       </div>
       </div>
       </div>
   )
 }
-/*let mapStateToProps = (state) => {
+let mapStateToProps = (state) => {
   return {
-  id: state.post.myPostData.id
+  myPostData: state.post.myPostData
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteTask: (newTasks) => {
-      dispatch(deleteTask(newTasks))
+    deletePostData: (newTasks) => {
+      dispatch(deletePostData(newTasks))
     },
 
   }
-}*/
+}
 
-export default TodoTask;
+export default connect(mapStateToProps, mapDispatchToProps)(TodoTask);
