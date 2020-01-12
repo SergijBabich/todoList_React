@@ -10,7 +10,7 @@
 }
 .header_authorize {
   margin-right: 20px;
-  width: 250px;
+  width: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,11 +18,13 @@
 }
 .header_authorize p  {
   color: #cecaca;
+  margin-right: 10px;
 }
 .header_authorize_button {
   background-image: url(https://img.icons8.com/carbon-copy/100/000000/export.png);
   width: 40px;
   height: 30px;
+  background-color: white;
   background-size: cover;
   background-position: center;
 }
@@ -36,6 +38,6 @@
 }
 .header_authorize span {
 color: #9d40e4;
-font-size: 30px;
-font-family: Brush Script MT;
+font-size: 20px;
+margin-right: 10px;
 }

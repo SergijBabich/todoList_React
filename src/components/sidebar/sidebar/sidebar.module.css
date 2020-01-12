@@ -1,0 +1,8 @@
+.sidebar__items p {
+  color: #cecaca;
+  font-size: 20px;
+}
+.sidebar__items {
+  display: flex;
+  flex-direction: row;
+}

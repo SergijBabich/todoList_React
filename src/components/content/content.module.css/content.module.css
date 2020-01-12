@@ -11,27 +11,27 @@
 }
 .content__container {
   width: 400px;
-  height: 250px;
+  height: auto;
   display: flex;
   margin: auto;
   align-items: center;
   border-radius: 10px;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
 }
 .content__container span {
  color: #cecaca;
+ font-size: 17px;
 }
 .content__container form {
   display: flex;
-  height: 220px;
   flex-direction: column;
-  justify-content: space-between;
-  align-items:center;
+  height: auto;
 }
 .content__container__input {
   width: 300px;
-  height: 60px;
+  height: 90px;
   text-align: center;
 }
 label {
@@ -41,6 +41,7 @@ label {
   text-align: center;
   width: 300px;
   height: 40px;
+  margin-top: 20px;
   border-radius: 5px;
   outline: none;
   background-color: rgba(0, 0, 0, 0.16);
@@ -54,12 +55,16 @@ label {
 }
 form {
   position: relative;
-
+  align-items: center;
+}
+form span {
+  height: 20px;
 }
 
 .content__button {
   height: 40px;
   width: 40px;
+  margin-top: 30px;
   position: relative;
   border-radius: 50%;
     background-image: linear-gradient(to bottom, #00a2d3, #0d7796);
@@ -68,3 +73,56 @@ form {
     cursor: pointer;
     transition: 0.4s;
 }
+
+/*Create  new task */
+.container__items {
+  max-width: 700px;
+  width: 100%;
+  min-height: 50px;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #8a8a8a29;
+  border-radius: 15px;
+
+}
+.container__items_index {
+  width: 40px;
+  text-align: center;
+  height: inherit;
+}
+.container__items_name {
+  width: 100px;
+  text-align: center;
+  height: inherit;
+  word-wrap:break-word;
+}
+.container__items_description {
+  width: 450px;
+  height: inherit;
+  border-bottom: 2px solid white;
+  word-wrap:break-word;
+  }
+  .container__items_button {
+    height: 40px;
+    width: 60px;
+    text-align: center;
+    position: relative;
+  }
+  .container__items_button button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #3cd83c;
+    text-align: center;
+    position: relative;
+  }
+  .container__items_button button::after {
+    content: '\2714';
+    background-size: cover;
+    width: 40px;
+    right: 3px;
+    font-size: 20px;
+    height: 20px;
+  }

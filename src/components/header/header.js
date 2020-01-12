@@ -5,6 +5,8 @@ import {logOutUser} from '../../REDUX/Auth_Reducer';
 import { Redirect } from 'react-router-dom';
 import listReducer from '../../REDUX/List_Reducer';
 import {deleteTask} from '../../REDUX/List_Reducer';
+import Translate  from 'react-translate-component';
+
     class Header extends React.Component {
       constructor(props) {
          super(props);
@@ -38,7 +40,7 @@ import {deleteTask} from '../../REDUX/List_Reducer';
      <div className={h.header_logo}>
     </div>
     <div className={h.header_authorize}>
-    <p>Hello <span> {this.props.login} </span></p>
+    <Translate content='task.hello' component='p' /> <span> {this.props.login} </span>
     <div className={h.header_authorize_button}>
    <button onClick={this.getOutUser}></button>
     </div>

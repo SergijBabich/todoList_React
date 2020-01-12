@@ -4,7 +4,7 @@ import {deletePostData} from '../../REDUX/List_Reducer';
 import {connect} from   'react-redux';
 import {setPostData} from '../../REDUX/List_Reducer';
 const TodoTask = (props) => {
-
+ console.log(props);
  /*let removeObj = () => {
     console.log(props);
    let a = false;
@@ -19,11 +19,11 @@ const TodoTask = (props) => {
   return (
       <div>
       <div className={ c.container__items}>
-      <div>{props.index}</div>
-      <div>{props.name}</div>
-      <div>{props.description}</div>
-      <div>
-       <button onClick={handleClick} name='Create task'  value={props.done} ></button>
+      <div className={c.container__items_index}>{props.index}</div>
+      <div className={c.container__items_name}>{props.name}</div>
+      <div className={c.container__items_description}>{props.description}</div>
+      <div className={c.container__items_button} >
+       <button onClick={handleClick} name='Create task' ></button>
       </div>
       </div>
       </div>

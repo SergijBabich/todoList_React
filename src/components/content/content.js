@@ -12,20 +12,17 @@ constructor(props) {
       arr.splice(index, 1);
       this.setState({myPostData:arr});
     }
-    getDataList1 =() => {
-      console.log(this.props);
-    }
    getDataList = (values) => {
    this.props.addpost(values.name, values.description);
   }
   myPostElement =(el, index) =>{
-     return <TodoTask id={index}  myPostData ={this.props.myPostData} index={index} hideBlock={this.hideBlock} name={el.name} done={el.done} description = {el.description} />
+     return <TodoTask id={index}   myPostData ={this.props.myPostData} index={index} hideBlock={this.hideBlock} name={el.name} done={el.done} description = {el.description} />
    }
 
 render () {
   return (
     <div>
-     <TodoListFormRedux  onSubmit={this.getDataList} />
+     <TodoListFormRedux  onLangChange={this.props.onLangChange} onSubmit={this.getDataList} />
      {this.props.myPostData.map(this.myPostElement)}
      {this.myPostElement}
     </div>

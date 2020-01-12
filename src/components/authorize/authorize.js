@@ -8,7 +8,10 @@ import listReducer from '../../REDUX/List_Reducer';
 import {deleteTask} from '../../REDUX/List_Reducer';
 import {Input} from '../../Utils/formControl.js';
 import authReducer from   '../../REDUX/Auth_Reducer.js';
+import counterpart from 'counterpart';
+import Translate  from 'react-translate-component';
 import {required , maxLengthCreator, minLengthCreator} from '../../Utils/validator.js'
+
 const Authorize = (props) => {
  console.log(props);
  let redirect = () => {
@@ -16,6 +19,7 @@ const Authorize = (props) => {
       return <Redirect to='/content' />
    }
  }
+
  let pushFormData = (values) => {
     props.setUserData(values.login, values.password);
 
@@ -34,8 +38,8 @@ const AuthorizeForm = (props) => {
 
   return (
     <div>
-    <form onSubmit = {props.handleSubmit}>
-    <label>Regisrtation</label>
+    <form  onSubmit = {props.handleSubmit}>
+      <Translate content='authorize.name' component='label'/>
     <div className={a.registration__container__input}>
     <Field component={Input}  validate={[required, maxLength20]}  name={'login'} autocomplete="off" placeholder='Enter your mail' />
    </div>

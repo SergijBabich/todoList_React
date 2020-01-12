@@ -5,16 +5,18 @@ import TodoList from './content';
 import c from './content.module.css/content.module.css';
 import {required , maxLengthCreator} from '../../Utils/validator.js';
 import {Input, Textarea} from '../../Utils/formControl.js';
+import Translate  from 'react-translate-component';
 let maxLength300 = maxLengthCreator(300);
 const TodoListForm = (props) => {
+  console.log(props);
   return (
     <div className={c.content__container}>
     <form onSubmit = {props.handleSubmit}>
-    <span>Name</span>
+    <Translate content='task.name' component='span'/>
     <div className={c.content__container__input}>
     <Field autocomplete="off" validate={[required]} component={Input} name={'name'} />
    </div>
-   <span>Description</span>
+   <Translate content='task.description' component='span'/>
    <div className={c.content__container__input}>
    <Field  autocomplete="off"   validate={[required]} className={c.content__container__textarea} component={Textarea} cols="45" rows="5" name={'description'} type={'text'} />
   </div>
