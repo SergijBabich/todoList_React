@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter } from  'react-router-dom';
+import {HashRouter } from  'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import {Provider} from  'react-redux';
@@ -40,7 +40,7 @@ class  App  extends Component{
             <option value='uk'>UK</option>
          </select>
         </div>
-       <BrowserRouter>
+       <HashRouter basename={process.env.PUBLIC_URL}>
          <Provider store = {store}>
             <div className='wrapper__description'>
                 <Redirect from="/" to="/start" />
@@ -67,7 +67,7 @@ class  App  extends Component{
                     }} />
             </div>
         </Provider>
-      </BrowserRouter>
+      </HashRouter>
     </div>
     );
  }
