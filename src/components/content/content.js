@@ -14,6 +14,8 @@ constructor(props) {
     }
    getDataList = (values) => {
    this.props.addpost(values.name, values.description);
+   (()=> {value.name='';
+          value.description=''})();
   }
   myPostElement =(el, index) =>{
      return <TodoTask id={index}   myPostData ={this.props.myPostData} index={index} hideBlock={this.hideBlock} name={el.name} done={el.done} description = {el.description} />
