@@ -9,6 +9,10 @@
 .container__items__hide {
   display: none;
 }
+.wrapper_items {
+  background-color: black;
+  border: 20px solid black;
+}
 .content__container {
   width: 400px;
   height: auto;
@@ -76,11 +80,11 @@ form span {
 
 /*Create  new task */
 .container__items {
-  max-width: 700px;
   width: 100%;
   min-height: 50px;
   height: auto;
   display: flex;
+  word-break: break-all;
   justify-content: space-around;
   align-items: center;
   background-color: #8a8a8a29;
